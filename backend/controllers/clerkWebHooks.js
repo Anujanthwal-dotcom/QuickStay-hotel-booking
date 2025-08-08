@@ -35,17 +35,20 @@ const clerkWebhooks = async (req,res)=>{
             case "user.created":
                 {
                     const user = new User(userData);
+                    console.log("saving user:"+user);
                     user.save();
                     break;
                 }
 
             case "user.updated":
                 {
+                    console.log('updating user:'+data.id);
                     await User.findByIdAndUpdate(data.id,userData);
                     break;
                 }
             case "user.deleted":
                 {
+                    console.log('deleting user:'+data.id);
                     await User.findByIdAndDelete(data.id);
                     break;
                 }
