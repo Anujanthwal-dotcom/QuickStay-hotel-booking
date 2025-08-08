@@ -13,7 +13,7 @@ app.use(clerkMiddleware());
 
 
 //api to listen clerk web hook
-app.use("/api/clerk",clerkWebhooks);
+app.post("/api/clerk",clerkWebhooks);
 
 
 app.get('/',(req,res)=>{
