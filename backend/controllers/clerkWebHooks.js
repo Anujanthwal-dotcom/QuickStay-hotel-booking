@@ -34,7 +34,8 @@ const clerkWebhooks = async (req,res)=>{
         switch(type){
             case "user.created":
                 {
-                    await User.create(userData);
+                    const user = new User(userData);
+                    user.save();
                     break;
                 }
 
