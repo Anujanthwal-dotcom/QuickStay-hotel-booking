@@ -94,7 +94,6 @@ export const createBooking = async (req, res) => {
         <p>If you need to make any changes, feel free to contact us.</p>
       `,
     };
-    console.log(req.user);
     
     await transporter.sendMail(mailOption);
 
